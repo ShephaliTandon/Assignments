@@ -1,0 +1,18 @@
+Ques1 :-  Write shell script to find “Error” message in ServerLogFile.log
+
+if [ -s ErrLog.txt ]
+then
+echo "Has Errors"
+else
+echo "No Errors"
+fi
+
+
+
+Ques2:- Write shell script to ping the machine & check whether machine is UP or down
+
+ping -c4 $ip_address 
+where 
+$ip_address is the ip of your remote server and parse the output 
+to capture the successful packets and/or failed packets and use 
+mail -s to send the log via email

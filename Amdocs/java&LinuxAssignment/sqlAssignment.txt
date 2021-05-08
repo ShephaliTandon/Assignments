@@ -1,0 +1,112 @@
+1. waqtd the data of  a particular column from a table?
+ select ename 
+ from emp 
+ order by ename; 
+
+2. waqtd the data from multiple columns of a table?
+select sal,job,hiredate 
+from emp 
+order by sal; 
+
+3.waqtd the employee’s name as name and hiredate as DOJ of employees? 
+select ename as name, hiredate as DOJ 
+from emp  
+order by ename; 
+
+4.waqtd the names and annual salary of the employees in the emp table?
+select ename as name,sal*12 as annual_sal
+ from emp 
+order by ename; 
+
+5. waqtd the daily wages of the employees?
+select sal/30 as daily_wage 
+from emp 
+order by sal; 
+
+6. waqtd the details of all ‘CLERK’in the employees?
+select * 
+from emp 
+where job='CLERK' 
+order by job ; 
+
+7. waqtd the name and salary of all the salesman?
+select ename as name,sal as salary 
+from emp 
+where job='SALESMAN' 
+order by ename; 
+
+8. waqtd the details of all employees whose salary is more than 2500?
+select * 
+from emp 
+where sal>2500 
+order by sal;
+ 
+9. waqtd the details of the employees who joined the company after 3rd jan 85?
+select * 
+from emp 
+where hiredate >'03-JAN-85' 
+order by ename;
+ 
+10. waqtd the details of the employees whose annual salary is more than 10000?
+select * 
+from emp 
+where sal*12>10000 
+order by sal; 
+
+11. waqtd the details of the employees in the increasing order they joined the salary?
+select * 
+from emp 
+order by sal asc; 
+
+12.  waqtd the details of the employees in the order they joined the company?
+select * 
+from emp
+order by hiredate;
+ 
+13. waqtd the details of all department 20 employees?
+select * 
+from emp 
+where deptno=20 
+order by ename; 
+
+14. waqtd the details of all the clerk from department 20?
+select * 
+from emp 
+where job ='CLERK' and deptno =20 
+order by ename;
+ 
+15. waqtd the details of all the employees from department 10 having salary more than 1000?
+select * 
+from emp 
+where deptno=10 and sal>1000 
+order by ename; 
+
+16. waqtd the details of all the manager from department 30 joined before 22-05-86?
+select * 
+from emp 
+where job ='MANAGER' and deptno =30 and hiredate<'22-MAY-86' 
+order by job;
+
+17. waqtd the details of employees from department 10 and 30 having slary more than 1200?
+select * 
+from emp 
+where deptno in(10,30) and sal>1200 
+order by sal; 
+
+18. waqtd the date of joning of all the clerk and manager from department 10 and 30?
+select hiredate as Date_of_joining ,job 
+from emp 
+where job='MANAGER' and job='CLERK' 
+order by job; 
+
+19. waqtd the details of emplyoyees who are not manager?
+select * 
+from emp 
+where job !='MANAGER' 
+order by job; 
+
+20. waqtd the details of employees who are neither salesman nor clerk?
+select * 
+from emp 
+where not job in('SALESMAN','CLERK') 
+order by job;
